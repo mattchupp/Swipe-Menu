@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Sidebar</title>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link href="stylesheets/swipe.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+    <!-- javascript for the side bar sliding in and out -->
+	<script type="text/javascript">
+
+        $(document).ready(function() {
+          $("[data-toggle]").click(function() {
+            var toggle_el = $(this).data("toggle");
+            $(toggle_el).toggleClass("open-sidebar");
+          });
+             
+        });
+         
+        $(".swipe-area").swipe({
+            swipeStatus:function(event, phase, direction, distance, duration, fingers)
+                {
+                    if (phase=="move" && direction =="right") {
+                         $(".container").addClass("open-sidebar");
+                         return false;
+                    }
+                    if (phase=="move" && direction =="left") {
+                         $(".container").removeClass("open-sidebar");
+                         return false;
+                    }
+                }
+        });
+
+	</script>
+
+<div class="container">
+    <div id="sidebar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="swipe-area"></div>
+        <a href="#" data-toggle=".container" id="sidebar-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="content">
+            <h1>Swiping Side Bar</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
