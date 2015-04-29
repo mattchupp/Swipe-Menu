@@ -4,6 +4,7 @@
  */
 
 @import "compass/reset";
+
 /*
 	** Body, html variables **
 */
@@ -52,7 +53,8 @@ body, html {
 
 /* background near the area around the menu button */
 					 /* grey */
-$sa-background-color: #f3f3f3; 
+/*$sa-background-color: $background-color; */
+$sa-background-color: $background-color; 
 
 .swipe-area {
     position: absolute;
@@ -67,16 +69,16 @@ $sa-background-color: #f3f3f3;
 /* sidebar menu variables */
 
 /* Background color of the sidebar menu */
-					/* red */
-$sidebar-background: #DF314D;
+					/* blue */
+$sidebar-background: #94D4FF;
 
 /* The background color of box when hovering over link */
-				  /* red */
-$hover-background: #C9223D; 
+				  /* blue */
+$hover-background: #0FB2F2;
 
 /* Border color at bottom of boxes for links */
-					/* greyish */
-$link-border-color: #C9223D;
+				/* blue */
+$link-border-color: #0FB2F2;
 
 #sidebar {
     background: $sidebar-background;
@@ -121,8 +123,8 @@ $link-border-color: #C9223D;
 /* main-content variables */
 
 /* Background color of the menu button on main page */
-							/* Red */
-$sidebar-toggle-background: #DF314D; 
+							/* Blue */
+$sidebar-toggle-background: #94D4FF; 
 
 /* Color of the 3 bars in the menu button on main page */
 				/* white */
