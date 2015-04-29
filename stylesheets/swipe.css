@@ -2,7 +2,7 @@
  * code taken from --> http://www.onextrapixel.com/2013/06/24/creating-a-swipeable-side-menu-for-the-web/
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> 
  */
-/* line 5, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,70 +24,75 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../.rvm/gems/ruby-2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/* line 8, ../sass/swipe.scss */
+/*
+	** Body, html variables **
+*/
+/* white */
+/* line 15, ../sass/swipe.scss */
 body, html {
   height: 100%;
   margin: 0;
   overflow: hidden;
-  font-family: helvetica;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
+  background-color: #fff;
 }
-/* line 15, ../sass/swipe.scss */
+/* line 23, ../sass/swipe.scss */
 body h1, html h1 {
   font-size: 36px;
   line-height: 30px;
 }
-/* line 20, ../sass/swipe.scss */
+/* line 28, ../sass/swipe.scss */
 body p, html p {
   position: relative;
   line-height: 20px;
   top: 20px;
 }
 
-/* line 26, ../sass/swipe.scss */
+/* line 35, ../sass/swipe.scss */
 .container {
   position: relative;
   height: 100%;
@@ -99,12 +104,15 @@ body p, html p {
   -o-transition: left 0.4s ease-in-out;
   transition: left 0.4s ease-in-out;
 }
-/* line 37, ../sass/swipe.scss */
+/* line 46, ../sass/swipe.scss */
 .container.open-sidebar {
   left: 240px;
 }
 
-/* line 42, ../sass/swipe.scss */
+/* Swipe area variables */
+/* background near the area around the menu button */
+/* grey */
+/* line 57, ../sass/swipe.scss */
 .swipe-area {
   position: absolute;
   width: 50px;
@@ -115,7 +123,14 @@ body p, html p {
   z-index: 0;
 }
 
-/* line 52, ../sass/swipe.scss */
+/* sidebar menu variables */
+/* Background color of the sidebar menu */
+/* red */
+/* The background color of box when hovering over link */
+/* red */
+/* Border color at bottom of boxes for links */
+/* greyish */
+/* line 81, ../sass/swipe.scss */
 #sidebar {
   background: #DF314D;
   position: absolute;
@@ -126,18 +141,18 @@ body p, html p {
   -moz-box-sizing: border-box;
   /* sidebar ul */
 }
-/* line 61, ../sass/swipe.scss */
+/* line 90, ../sass/swipe.scss */
 #sidebar ul {
   margin: 0;
   padding: 0;
   list-style: none;
   /* ul li */
 }
-/* line 66, ../sass/swipe.scss */
+/* line 95, ../sass/swipe.scss */
 #sidebar ul li {
   margin: 0;
 }
-/* line 69, ../sass/swipe.scss */
+/* line 98, ../sass/swipe.scss */
 #sidebar ul li a {
   padding: 15px 20px;
   font-size: 16px;
@@ -152,13 +167,18 @@ body p, html p {
   -o-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
 }
-/* line 84, ../sass/swipe.scss */
+/* line 113, ../sass/swipe.scss */
 #sidebar ul li:hover a {
   background: #C9223D;
 }
 
 /* sidebar */
-/* line 92, ../sass/swipe.scss */
+/* main-content variables */
+/* Background color of the menu button on main page */
+/* Red */
+/* Color of the 3 bars in the menu button on main page */
+/* white */
+/* line 131, ../sass/swipe.scss */
 .main-content {
   width: 100%;
   height: 100%;
@@ -169,23 +189,23 @@ body p, html p {
   /* .main-content .content */
   /* .main-content #sidebar-toggle */
 }
-/* line 100, ../sass/swipe.scss */
+/* line 139, ../sass/swipe.scss */
 .main-content .content {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding-left: 60px;
   width: 100%;
 }
-/* line 106, ../sass/swipe.scss */
+/* line 145, ../sass/swipe.scss */
 .main-content .content h1 {
   font-weight: 100;
 }
-/* line 110, ../sass/swipe.scss */
+/* line 149, ../sass/swipe.scss */
 .main-content .content p {
   width: 100%;
   line-height: 160%;
 }
-/* line 116, ../sass/swipe.scss */
+/* line 155, ../sass/swipe.scss */
 .main-content #sidebar-toggle {
   background: #DF314D;
   border-radius: 3px;
@@ -194,7 +214,7 @@ body p, html p {
   padding: 10px 7px;
   float: left;
 }
-/* line 124, ../sass/swipe.scss */
+/* line 163, ../sass/swipe.scss */
 .main-content #sidebar-toggle .bar {
   display: block;
   width: 18px;
@@ -203,7 +223,7 @@ body p, html p {
   background-color: #fff;
   border-radius: 1px;
 }
-/* line 132, ../sass/swipe.scss */
+/* line 171, ../sass/swipe.scss */
 .main-content #sidebar-toggle .bar:last-child {
   margin-bottom: 0;
 }

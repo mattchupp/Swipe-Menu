@@ -4,16 +4,24 @@
  */
 
 @import "compass/reset";
+/*
+	** Body, html variables **
+*/
+$font: "Helvetica", Helvetica, Arial, sans-serif;
+$h1Size: 36px;
+				/* white */
+$background-color: #fff; 
 
 body, html {
     height: 100%;
     margin: 0;
     overflow:hidden;
-    font-family: helvetica;
+    font-family: $font;
     font-weight: 100;
+    background-color: $background-color;
 
     h1 {
-    	font-size: 36px;
+    	font-size: $h1Size;
     	line-height: 30px;
     }
 
@@ -23,34 +31,55 @@ body, html {
     	top: 20px;
     }
 }
+
 .container {
     position: relative;
     height: 100%;
     width: 100%;
     left: 0;
     -webkit-transition:  left 0.4s ease-in-out;
-    -moz-transition:  left 0.4s ease-in-out;
-    -ms-transition:  left 0.4s ease-in-out;
-    -o-transition:  left 0.4s ease-in-out;
-    transition:  left 0.4s ease-in-out;
+       -moz-transition:  left 0.4s ease-in-out;
+        -ms-transition:  left 0.4s ease-in-out;
+         -o-transition:  left 0.4s ease-in-out;
+    		transition:  left 0.4s ease-in-out;
 
     &.open-sidebar {
     	left: 240px;
 	}
 }
- 
+
+/* Swipe area variables */
+
+/* background near the area around the menu button */
+					 /* grey */
+$sa-background-color: #f3f3f3; 
+
 .swipe-area {
     position: absolute;
     width: 50px;
     left: 0;
 	top: 0;
     height: 100%;
-    background: #f3f3f3;
+    background: $sa-background-color;
     z-index: 0;
 }
 
+/* sidebar menu variables */
+
+/* Background color of the sidebar menu */
+					/* red */
+$sidebar-background: #DF314D;
+
+/* The background color of box when hovering over link */
+				  /* red */
+$hover-background: #C9223D; 
+
+/* Border color at bottom of boxes for links */
+					/* greyish */
+$link-border-color: #C9223D;
+
 #sidebar {
-    background: #DF314D;
+    background: $sidebar-background;
     position: absolute;
     width: 240px;
     height: 100%;
@@ -73,21 +102,31 @@ body, html {
 			    color: white;
 			    text-decoration: none;
 			    display: block;
-			    border-bottom: 1px solid #C9223D;
+			    border-bottom: 1px solid $link-border-color;
 			    -webkit-transition:  background 0.3s ease-in-out;
-			    -moz-transition:  background 0.3s ease-in-out;
-			    -ms-transition:  background 0.3s ease-in-out;
-			    -o-transition:  background 0.3s ease-in-out;
-			    transition:  background 0.3s ease-in-out;
+			       -moz-transition:  background 0.3s ease-in-out;
+			        -ms-transition:  background 0.3s ease-in-out;
+			         -o-transition:  background 0.3s ease-in-out;
+			    		transition:  background 0.3s ease-in-out;
 			}
 
 			&:hover a {
-			    background: #C9223D;
+			    background: $hover-background;
 			}
 
 		} /* ul li */
 	} /* sidebar ul */
 } /* sidebar */
+
+/* main-content variables */
+
+/* Background color of the menu button on main page */
+							/* Red */
+$sidebar-toggle-background: #DF314D; 
+
+/* Color of the 3 bars in the menu button on main page */
+				/* white */
+$bar-background: #fff; 
 
 .main-content {
     width: 100%;
@@ -114,7 +153,7 @@ body, html {
 	} /* .main-content .content */
 
 	#sidebar-toggle {
-	    background: #DF314D;
+	    background: $sidebar-toggle-background;
 	    border-radius: 3px;
 	    display: block;
 	    position: relative;
@@ -126,7 +165,7 @@ body, html {
 		    width: 18px;
 		    margin-bottom: 3px;
 		    height: 2px;
-		    background-color: #fff;
+		    background-color: $bar-background;
 		    border-radius: 1px;
 
 		    &:last-child{
