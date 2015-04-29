@@ -70,7 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /*
 	** Body, html variables **
 */
-/* white */
+/* grey */
 /* line 16, ../sass/swipe.scss */
 body, html {
   height: 100%;
@@ -78,7 +78,7 @@ body, html {
   overflow: hidden;
   font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  background-color: #fff;
+  background-color: #E8E9EB;
 }
 /* line 24, ../sass/swipe.scss */
 body h1, html h1 {
@@ -120,7 +120,7 @@ body p, html p {
   left: 0;
   top: 0;
   height: 100%;
-  background: #fff;
+  background: #E8E9EB;
   z-index: 0;
 }
 
